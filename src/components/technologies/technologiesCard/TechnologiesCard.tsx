@@ -11,7 +11,7 @@ interface TechnologyPropsTypes {
 
 }
 export default function TechnologiesCard({ technology, selected, setSelected }: TechnologyPropsTypes) {
-    
+
     const badgeColors: Record<string, string> = {
         Popular: "bg-blue-100 text-blue-700",
         Trending: "bg-blue-100 text-blue-700",
@@ -31,8 +31,9 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
         const newSelected = [...selected, technology]
         setSelected(newSelected)
         // setIsSelected(true)
-        toast.success('🦄 Added!', {
-            position: "top-right",
+
+        toast.success(`Stack ${technology.name} Added`, {
+            position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: false,
@@ -43,7 +44,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
             transition: Bounce,
         });
     }
-    const isSelected = selected.find(s=>s.id===technology.id) 
+    const isSelected = selected.find(s => s.id === technology.id)
     return (
         <div className="border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2">
             <div className="flex justify-between mx-2">
@@ -58,7 +59,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
                 <p className="flex items-center"><FaStar />{technology.rating}</p>
 
             </div>
-            <button onClick={handleAddToCart} className={`flex items-center ${isSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected===undefined?false:true}>{isSelected ? 'Added' : 'Add to Stack'}</button>
+            <button onClick={handleAddToCart} className={`flex items-center ${isSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected === undefined ? false : true}>{isSelected ? 'Added' : 'Add to Stack'}</button>
         </div>
     )
 }

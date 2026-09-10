@@ -7,11 +7,11 @@ interface SelectedTechnologiesCardPropsType {
 
 export default function SelectedTechnologiesCard({ technology }: SelectedTechnologiesCardPropsType) {
     return (
-        <div className="grid grid-cols-12 border border-slate-100 rounded-2xl">
-            <div className="col-span-4 flex items-center">
+        <div className="grid grid-cols-12 border border-slate-100 rounded-2xl mt-2 px-2 py-2">
+            <div className="col-span-4 flex items-center gap-4">
                 <img src={technology.icon} alt=""  className="h-8"/>
                 <div >
-                    <h2>{technology.name}</h2>
+                    <h2 className="text-bold text-xl">{technology.name}</h2>
                     <p>{technology.category}</p>
                 </div>
             </div>

@@ -1,10 +1,15 @@
 import { FaStar } from "react-icons/fa"
 import type { TechnologiesType } from "../../../types/technologiesTypes"
+import type React from "react"
+import { useState } from "react"
 
 interface TechnologyPropsTypes {
-    technology: TechnologiesType
+    technology: TechnologiesType,
+    selected: TechnologiesType[]
+    setSelected: React.Dispatch<React.SetStateAction<TechnologiesType[]>>
 }
-export default function TechnologiesCard({ technology }: TechnologyPropsTypes) {
+export default function TechnologiesCard({ technology,selected,setSelected }: TechnologyPropsTypes) {
+    const [isSelected, setIsSelected] = useState<boolean>(false)
     const badgeColors: Record<string, string> = {
         Popular: "bg-blue-100 text-blue-700",
         Trending: "bg-blue-100 text-blue-700",
@@ -18,6 +23,12 @@ export default function TechnologiesCard({ technology }: TechnologyPropsTypes) {
 
         Backend: "bg-orange-100 text-orange-700",
         DevOps: "bg-orange-100 text-orange-700",
+    }
+    const handleAddToCart = ()=>{
+        console.log('added')
+        const newSelected = [...selected, technology]
+        setSelected(newSelected)
+        setIsSelected(true)
     }
     return (
         <div className="border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2">
@@ -33,7 +44,7 @@ export default function TechnologiesCard({ technology }: TechnologyPropsTypes) {
                 <p className="flex items-center"><FaStar />{technology.rating}</p>
 
             </div>
-            <button className="flex items-center bg-black text-white px-14 rounded-2xl mx-auto py-2">Add to Stack</button>
+            <button onClick={handleAddToCart} className={`flex items-center ${isSelected? 'bg-slate-300':'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected}>{isSelected?'Added':'Add to Stack'}</button>
         </div>
     )
 }

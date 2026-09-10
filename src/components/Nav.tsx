@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import NavLogo from '../assets/logo-text.png'
 export default function Nav() {
   return (
-    <nav className='sticky flex md:grid md:grid-cols-3 pt-3 pb-3 pl-2 shadow-md'>
+    <nav className='sticky top-0 z-50 bg-white flex md:grid md:grid-cols-3 pt-3 pb-3 pl-2 shadow-md'>
         <img src={NavLogo} alt="" />
         <ul className='hidden md:flex gap-5 md:items-center'>
             <li>Home</li>

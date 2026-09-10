@@ -9,7 +9,9 @@ interface TechnologiesPropsTypes {
 
 export default function Technologies({ technologiesPromise }: TechnologiesPropsTypes) {
     const technologies = use(technologiesPromise)
+    // const [technologies, setTechnologies] = useState<TechnologiesType[]>(technologiesData)
     const [selected, setSelected] = useState<TechnologiesType[]>([])
+    // const [isSelected, setIsSelected] = useState<boolean>(false)
     console.log(technologies)
     console.log('selected: ',selected)
     return (
@@ -24,7 +26,8 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
                                 key={technology.id}
                                 selected={selected}
                                 setSelected={setSelected}
-                                technology={technology}></TechnologiesCard>)
+                                technology={technology}
+                                ></TechnologiesCard>)
                         }
                   
                 </div>
@@ -35,7 +38,12 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
                         <div>
                             {selected.map(technology=> <SelectedTechnologiesCard 
                             key={technology.id} 
-                            technology={technology}></SelectedTechnologiesCard>)}
+                            technology={technology}
+                            selected={selected}
+                            setSelected={setSelected}
+                          
+                         
+                            ></SelectedTechnologiesCard>)}
                         </div>
                     </div>
                 </div>

@@ -1,16 +1,17 @@
 import { FaStar } from "react-icons/fa"
 import type { TechnologiesType } from "../../../types/technologiesTypes"
 import type React from "react"
-import { useState } from "react"
+// import { useState } from "react"
 import { Bounce, toast } from "react-toastify"
 
 interface TechnologyPropsTypes {
     technology: TechnologiesType,
     selected: TechnologiesType[]
-    setSelected: React.Dispatch<React.SetStateAction<TechnologiesType[]>>
+    setSelected: React.Dispatch<React.SetStateAction<TechnologiesType[]>>,
+
 }
 export default function TechnologiesCard({ technology, selected, setSelected }: TechnologyPropsTypes) {
-    const [isSelected, setIsSelected] = useState<boolean>(false)
+    
     const badgeColors: Record<string, string> = {
         Popular: "bg-blue-100 text-blue-700",
         Trending: "bg-blue-100 text-blue-700",
@@ -29,7 +30,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
         console.log('added')
         const newSelected = [...selected, technology]
         setSelected(newSelected)
-        setIsSelected(true)
+        // setIsSelected(true)
         toast.success('🦄 Added!', {
             position: "top-right",
             autoClose: 5000,
@@ -42,6 +43,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
             transition: Bounce,
         });
     }
+    const isSelected = selected.find(s=>s.id===technology.id) 
     return (
         <div className="border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2">
             <div className="flex justify-between mx-2">
@@ -56,7 +58,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
                 <p className="flex items-center"><FaStar />{technology.rating}</p>
 
             </div>
-            <button onClick={handleAddToCart} className={`flex items-center ${isSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected}>{isSelected ? 'Added' : 'Add to Stack'}</button>
+            <button onClick={handleAddToCart} className={`flex items-center ${isSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected===undefined?false:true}>{isSelected ? 'Added' : 'Add to Stack'}</button>
         </div>
     )
 }

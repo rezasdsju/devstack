@@ -1,6 +1,7 @@
 import { use, useState } from "react"
 import type { TechnologiesType } from "../../types/technologiesTypes"
 import TechnologiesCard from "./technologiesCard/TechnologiesCard"
+import SelectedTechnologiesCard from "./selectedTechnologies/SelectedTechnologiesCard"
 
 interface TechnologiesPropsTypes {
     technologiesPromise: Promise<TechnologiesType[]>
@@ -27,12 +28,18 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
                         }
                   
                 </div>
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-3 sm:ml-3 border border-slate-200 rounded-2xl mx-auto px-3 py-3 ">
                     <div>
                         <h2>Your Stack</h2>
-                        {/* <p>{selected? `${selected.length} Technologies are selected`: `No technologies selected yet.`}</p> */}
+                        <p>{selected? `${selected.length} Technologies selected`: `No technologies selected yet.`}</p>
+                        <div>
+                            {selected.map(technology=> <SelectedTechnologiesCard 
+                            key={technology.id} 
+                            technology={technology}></SelectedTechnologiesCard>)}
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )

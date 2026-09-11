@@ -4,7 +4,7 @@ DevStack is a project where users can choose their development stack by selectin
 
 ## Live Demo
 
-[https://devstack-q94l3ftgx-reza-babd.vercel.app](https://devstack-q94l3ftgx-reza-babd.vercel.app)
+[https://devstack-8tc8r664t-reza-babd.vercel.app](https://devstack-8tc8r664t-reza-babd.vercel.app)
 
 ## Features
 

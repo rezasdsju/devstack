@@ -47,7 +47,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
     const findInSelected = selected.find(s => s.id === technology.id)
     console.log('Find in Selected: ',findInSelected)
     return (
-        <div className="border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2">
+        <div className={`border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2 ${findInSelected?'border-red-400':'border-gray-100'}`}>
             <div className="flex justify-between mx-2">
                 <img src={technology.icon} alt="" className="h-10" />
                 <button className={`${badgeColors[technology.badge]} rounded-xl px-4 `}>{technology.badge && technology.badge}</button>

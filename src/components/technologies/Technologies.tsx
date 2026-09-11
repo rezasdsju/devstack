@@ -35,7 +35,7 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
             <h2 className="text-3xl font-bold">Explore the <span className="text-[#D946EF]">Technologies</span></h2>
             <p className="pt-1">Pick one technology per category to build your ideal stack.</p>
             <div className="grid grid-cols-1 sm:grid-cols-12 mt-4 sm:mt-6">
-                <div className="sm:col-span-9 grid grid-cols-1 sm:grid-cols-3 sm: gap-5 ">
+                <div className="sm:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm: gap-5 ">
 
                     {
                         technologies.map(technology => <TechnologiesCard
@@ -76,8 +76,8 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
                         </div> */}
                     </div>
                     {selected.length !== 0 ?
-                        <div className="border border-gray-200 py-4 mx-auto rounded-2xl mt-4">
-                            <button onClick={handleDeleteAll} className="block text-red-400 text-xl font-bold mx-auto ">Remove All</button>
+                        <div className="border border-gray-200   rounded-2xl mt-4">
+                            <button onClick={handleDeleteAll} className="block text-red-400 text-xl font-bold mx-auto py-4">Remove All</button>
                         </div> : ''}
                 </div>
 

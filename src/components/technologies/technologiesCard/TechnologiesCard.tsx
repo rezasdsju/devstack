@@ -54,10 +54,10 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
             </div>
             <h2 className="font-bold text-2xl pl-2">{technology.name}</h2>
             <p className="pl-2">{technology.description}</p>
-            <div className="flex gap-5 items-center border-t border-slate-200 w-[90%] mx-4 pt-2 pb-2">
+            <div className="flex flex-wrap gap-5 sm:gap-4 items-center border-t border-slate-200 w-[90%] mx-4 pt-2 pb-2">
                 <button className="btn btn-soft">{technology.category}</button>
                 <p>{technology.difficulty}</p>
-                <p className="flex items-center"><FaStar />{technology.rating}</p>
+                <p className=" flex  sm:basis-full md:basis-auto items-center"><FaStar />{technology.rating}</p>
 
             </div>
             <button onClick={handleAddToCart} className={`flex items-center ${findInSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={findInSelected === undefined ? false : true}>{findInSelected ? 'Added' : 'Add to Stack'}</button>

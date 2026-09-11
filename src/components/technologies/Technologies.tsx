@@ -47,7 +47,7 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
                     }
 
                 </div>
-                <div className="sm:col-span-3 sm:ml-3 border border-slate-200 rounded-2xl mx-auto px-3 py-3 ">
+                <div className="sm:col-span-3 sm:ml-3 border border-slate-200 rounded-2xl mx-auto px-3 py-3 mt-15 sm:mt-0">
                     <div>
                         <h2>Your Stack</h2>
                         <p>{selected.length > 0 ? `${selected.length} Technologies selected` : `No technologies selected yet.`}</p>

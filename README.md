@@ -129,7 +129,7 @@ This project is for learning and portfolio purposes.
 
 
 ---
-#React Concepts
+# React Concepts
 
 ## What is JSX, and why is it used in React?
 JSX stands for JavaScript XML. The syntax expression that allows to write HTML-like markup directly inside JavaScript files is called JSX.

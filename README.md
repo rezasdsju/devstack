@@ -25,6 +25,8 @@ DevStack is a project where users can choose their development stack by selectin
 - DaisyUI
 - React Icons
 - React Toastify
+- JSON (for technology data)
+- Vite (build tool)
 
 ## Project Structure
 

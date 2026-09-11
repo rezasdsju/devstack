@@ -31,7 +31,7 @@ export default function Technologies({ technologiesPromise }: TechnologiesPropsT
         });
     }
     return (
-        <div className="mt-2 sm:mt-6 pl-2 sm:pl-4">
+        <div className="mt-2 sm:mt-6 pl-2 sm:pl-4" id='technologies'>
             <h2 className="text-3xl font-bold">Explore the <span className="bg-linear-to-r from-[#ff4b2b] via-[#e91e63] to-[#8e2de2] bg-clip-text text-transparent font-bold">Technologies</span></h2>
             <p className="pt-1">Pick one technology per category to build your ideal stack.</p>
             <div className="grid grid-cols-1 sm:grid-cols-12 mt-4 sm:mt-6">

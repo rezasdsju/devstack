@@ -8,7 +8,7 @@ export default function Banner() {
                     compare them side by side, and put together the stack that fits your
                     next project.</p>
                 <div className='flex items-center gap-3 sm:gap-5'>
-                    <button className="btn btn-active btn-secondary">Explore Technologies</button>
+                    <button onClick={()=>document.getElementById('technologies')?.scrollIntoView()} className="btn btn-active btn-secondary">Explore Technologies</button>
                     <button className="btn btn-soft">Learn More</button>
                 </div>
 

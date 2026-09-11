@@ -158,9 +158,9 @@ useState hook is a build in React function. It allows to add, track and update l
 
 In this DevStack project, useState has been used in 'Technologies' component to track and update the state of selected technologies.
 
-```  const [selected, setSelected] = useState<TechnologiesType[]>([])
+```tsx
+const [selected, setSelected] = useState<TechnologiesType[]>([])
 ```
-
 ## What does the useEffect hook do, and why did you need it to load the JSON data?
 The useEffect hook is a build in React tool. It allows us to perform side effects in functional components. SideEffect is used to fecthing data, setting up subscriptions, or manually changing the dom without reaching the purely predictable world of React's rendering engine
 

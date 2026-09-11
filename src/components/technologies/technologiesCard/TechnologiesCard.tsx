@@ -27,7 +27,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
         DevOps: "bg-orange-100 text-orange-700",
     }
     const handleAddToCart = () => {
-        console.log('added')
+        // console.log('added')
         const newSelected = [...selected, technology]
         setSelected(newSelected)
         // setIsSelected(true)
@@ -45,7 +45,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
         });
     }
     const findInSelected = selected.find(s => s.id === technology.id)
-    console.log('Find in Selected: ',findInSelected)
+    // console.log('Find in Selected: ',findInSelected)
     return (
         <div className={`border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2 ${findInSelected?'border-red-400':'border-gray-100'}`}>
             <div className="flex justify-between mx-2">

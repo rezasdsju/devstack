@@ -44,7 +44,8 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
             transition: Bounce,
         });
     }
-    const isSelected = selected.find(s => s.id === technology.id)
+    const findInSelected = selected.find(s => s.id === technology.id)
+    console.log('Find in Selected: ',findInSelected)
     return (
         <div className="border border-gray-100 rounded-2xl pt-3 pb-3 space-y-2">
             <div className="flex justify-between mx-2">
@@ -59,7 +60,7 @@ export default function TechnologiesCard({ technology, selected, setSelected }: 
                 <p className="flex items-center"><FaStar />{technology.rating}</p>
 
             </div>
-            <button onClick={handleAddToCart} className={`flex items-center ${isSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={isSelected === undefined ? false : true}>{isSelected ? 'Added' : 'Add to Stack'}</button>
+            <button onClick={handleAddToCart} className={`flex items-center ${findInSelected ? 'bg-slate-300' : 'bg-black'} text-white px-14 rounded-2xl mx-auto py-2`} disabled={findInSelected === undefined ? false : true}>{findInSelected ? 'Added' : 'Add to Stack'}</button>
         </div>
     )
 }

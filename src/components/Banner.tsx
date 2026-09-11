@@ -7,15 +7,15 @@ export default function Banner() {
                 <p>Explore frontend, backend, database, and tooling options, <br></br>
                     compare them side by side, and put together the stack that fits your
                     next project.</p>
-<div className='flex items-center gap-3 sm:gap-5'>
+                <div className='flex items-center gap-3 sm:gap-5'>
                     <button className="btn btn-active btn-secondary">Explore Technologies</button>
-                <button className="btn btn-soft">Learn More</button>
-</div>
+                    <button className="btn btn-soft">Learn More</button>
+                </div>
 
 
             </div>
             <div>
-                <img src={BannerImage} alt="" className='h-85 mx-auto'/>
+                <img src={BannerImage} alt="" className='h-85 mx-auto' />
             </div>
         </div>
     )
